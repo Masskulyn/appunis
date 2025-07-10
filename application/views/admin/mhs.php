@@ -1,4 +1,3 @@
-
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -19,7 +18,18 @@
     </div>
     <!-- /.content-header -->
 
-    <!-- Main content -->
+    <!-- alert berhasil atau tidak nya disimpan -->
+      <?php if ($this->session->flashdata('success')): ?>
+          <div class="alert alert-success alert-dismissible fade show" role="alert">
+              <?= $this->session->flashdata('success'); ?>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+      <?php else : $this->session->unset_userdata('success'); ?>
+      <?php endif; ?>
+      <!-- end alert -->
+
     <section class="content">
       <div class="container-fluid">
        <div class="card">
@@ -55,9 +65,9 @@
                           <td><?= $data['sekolah_asal']; ?></td>
                           <td><?= $data['email']; ?></td>
                           <td>
-                              <a class="btn btn-primary" href="#" role="button">Edit</a>
-                              <a class="btn btn-danger" href="#" role="button">Hapus</a>
-                          </td>
+                          <a class="btn btn-primary" href="<?= site_url('administrator/mahasiswa/edit/'.$data['id']) ?>" role="button">Edit</a>
+                          <a class="btn btn-danger" href="<?= site_url('administrator/mahasiswa/hapus/'.$data['id']) ?>" role="button" onclick="return confirm('Yakin ingin menghapus data ini?')">Hapus</a>
+                        </td>
                       </tr>
                   <?php endforeach; ?>
               </tbody>

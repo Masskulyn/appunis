@@ -1,7 +1,4 @@
 
-
- 
-
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -23,8 +20,26 @@
     <!-- /.content-header -->
 
     <!-- Main content -->
+        <!-- alert berhasil atau tidak nya disimpan -->
+      <?php if ($this->session->flashdata('success')): ?>
+        <div id="alert-success" class="alert alert-success alert-dismissible fade show" role="alert">
+          <?= $this->session->flashdata('success'); ?>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <?php else : $this->session->unset_userdata('success'); ?> 
+        <?php endif; ?>
+
+        <!-- end alert -->
     <section class="content">
       <div class="container-fluid">
+        <div class="card">
+        <div class="card-header">
+        <h3 class="card-title"> Tabel Dosen</h3>
+        <div class="d-flex justify-content-end"><a class="btn btn-primary" href="<?= site_url('administrator/dosen/tambahdosen') ?>" role="button">Tambah Data</a></div>
+        </div>
+        <div class="card-body">
          <table class="table table-striped table-hover">
         <thead>
           <tr>
@@ -51,13 +66,16 @@
               <td><?= $data['email']; ?></td>
               <td><?= $data['alamat']; ?></td>
               <td>
-                <a class="btn btn-primary" href="#" role="button">Edit</a>
-                <a class="btn btn-danger" href="#" role="button">Hapus</a>
+                <a class="btn btn-primary" href="<?= site_url('administrator/dosen/edit/'.$data['id']) ?>" role="button">Edit</a>
+                <a class="btn btn-danger" href="<?= site_url('administrator/dosen/hapus/'.$data['id']) ?>" role="button" onclick="return confirm('Yakin ingin menghapus data ini?')">Hapus</a>
               </td>
             </tr>
           <?php endforeach; ?>
         </tbody>
       </table>
+      </div>
+        </div>
+      
       </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->

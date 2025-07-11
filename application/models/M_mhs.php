@@ -43,4 +43,8 @@ class M_mhs extends CI_Model {
     public function hapusDataMahasiswa($id) {
         $this->db->delete('mhs', ['id' => $id]);
     }
+    // Hitung jumlah mahasiswa
+    public function hitungJumlah() {
+        return $this->db->query("SELECT COUNT(*) as total FROM mhs")->row()->total;
+    }
 }

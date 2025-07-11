@@ -43,4 +43,9 @@ class D_dosen extends CI_Model {
     public function hapusDataDosen($id) {
         $this->db->delete('dosen', ['id' => $id]);
     }
+
+    // Hitung jumlah dosen
+    public function hitungJumlah() {
+        return $this->db->query("SELECT COUNT(*) as total FROM dosen")->row()->total;
+    }
 }

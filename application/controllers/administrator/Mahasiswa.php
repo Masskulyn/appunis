@@ -57,6 +57,8 @@ class Mahasiswa extends CI_Controller {
     public function edit($id) {
         $data['title'] = 'Edit Data Mahasiswa';
         $data['mhs'] = $this->M_mhs->getMahasiswaById($id);
+        $data['agama'] = ['Islam', 'Kristen', 'Hindu', 'Budha', 'Kong Hu Cu'];
+        $data['jk'] = ['Laki-laki', 'Perempuan'];
 
         $this->form_validation->set_rules('nim','NIM','required');
         $this->form_validation->set_rules('nama','NAMA','required');

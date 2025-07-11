@@ -30,9 +30,7 @@
             <h1>
                 <!-- akal akalan ajah -->
             </h1>
-        <?php if(validation_errors()) :?>
-            <span class=" text-danger"><?php echo validation_errors(); ?></span>    
-        <?php endif; ?>
+        
         
             <!-- form input mahasiswa -->
              <form action="" method="POST">
@@ -40,12 +38,14 @@
                     <label for="nidn" class="col-sm-2 col-form-label fw-bold">NIDN</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" id="nidn" name="nidn" placeholder="Masukkan NIDN">
+                        <div class="form-text text-danger"><?= form_error('nidn'); ?></div>
                     </div>
                 </div>
                 <div class="row mb-3">
                     <label for="nama" class="col-sm-2 col-form-label fw-bold">Nama Lengkap</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan Nama Lengkap">
+                        <div class="form-text text-danger"><?= form_error('nama'); ?></div>
                     </div>
                 </div>
                 <div class="row mb-3">
@@ -79,19 +79,21 @@
                     <label for="asalpt" class="col-sm-2 col-form-label fw-bold">Asal PT</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" id="asalpt" name="asalpt" placeholder="Masukkan Asal Perguruan Tinggi">
+                        <div class="form-text text-danger"><?= form_error('asalpt'); ?></div>
                     </div>
                 </div>
                 <div class="row mb-3">
                     <label for="email" class="col-sm-2 col-form-label fw-bold">Email</label>
                     <div class="col-sm-10">
                         <input type="email" class="form-control" id="email" name="email" placeholder="Masukkan email">
+                        <div class="form-text text-danger"><?= form_error('email'); ?></div>
                     </div>
                 </div>
                 <div class="row mb-3">
                     <label for="alamat" class="col-sm-2 col-form-label fw-bold">Alamat</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Masukkan Alamat">
-                        
+                        <div class="form-text text-danger"><?= form_error('alamat'); ?></div>
                     </div>
                 </div>
                 <div class="offset-md-2">

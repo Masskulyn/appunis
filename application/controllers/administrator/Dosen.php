@@ -54,6 +54,8 @@ class Dosen extends CI_Controller {
     public function edit($id) {
         $data['title'] = 'Edit Data Dosen';
         $data['dosen'] = $this->D_dosen->getDosenById($id);
+        $data['agama'] = ['Islam', 'Kristen', 'Hindu', 'Budha', 'Kong Hu Cu'];
+        $data['pendidikan'] = ['SMA/SMK (SEDERAJAT)', 'D1', 'D2', 'D3', 'D4', 'S1', 'S2', 'S3'];
 
         $this->form_validation->set_rules('nidn','NIDN','required');
         $this->form_validation->set_rules('nama','NAMA','required');

@@ -58,7 +58,7 @@
           <?php $no = 1; foreach ($dosen as $data): ?>
             <tr>
               <td><?= $no++; ?></td>
-              <td><?= $data['id']; ?></td>
+              <td><?= $data['nidn']; ?></td>
               <td><?= $data['nama']; ?></td>
               <td><?= $data['pendidikan']; ?></td>
               <td><?= $data['agama']; ?></td>

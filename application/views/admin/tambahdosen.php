@@ -51,7 +51,7 @@
                 <div class="row mb-3">
                     <label for="pendidikan" class="col-sm-2 col-form-label fw-bold">Pendidikan</label>
                     <div class="col-sm-10">
-                        <select class="form-select col-sm-12 form-control" aria-label="Default select example" id="jk" name="jk">
+                        <select class="form-select col-sm-12 form-control" aria-label="Default select example" id="pendidikan" name="pendidikan">
                         <option value="SMA/SMK(SEDERAJAT)">SMA/SMK (SEDERAJAT)</option>
                         <option value="D1">D1</option>
                         <option value="D2">D2</option>

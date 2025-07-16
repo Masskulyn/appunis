@@ -76,7 +76,7 @@
             <!-- small box -->
             <div class="small-box bg-danger">
               <div class="inner">
-                <h3>65</h3>
+                <h3><?= $jumlah_fakultas; ?></h3>
 
                 <p>Fakultas</p>
               </div>

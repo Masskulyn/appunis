@@ -16,7 +16,7 @@ class M_jadwal extends CI_Model {
             "semester"       => $this->input->post('semester', true),
             "hari"           => $this->input->post('hari', true),
             "jam"            => $this->input->post('jam', true),
-            "nama"     => $this->input->post('nama', true),
+            "nama"           => $this->input->post('nama', true),
             "ruangan"        => $this->input->post('ruangan', true),
         ];
 
@@ -48,7 +48,7 @@ class M_jadwal extends CI_Model {
     }
     // Hitung jumlah jadwal
     public function hitungJumlah() {
-        return $this->db->query("SELECT COUNT(*) as total FROM jadwal")->row()->total;
+        return $this->db->query("SELECT COUNT(*) as total FROM jadwal_kuliah")->row()->total;
     }
     public function getJadwalById($id) {
     return $this->db->get_where('jadwal_kuliah', ['id' => $id])->row(); // kembalikan sebagai objek

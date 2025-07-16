@@ -58,7 +58,7 @@
           </div>
 
           <button type="submit" class="btn btn-success">Simpan</button>
-          <a href="<?= base_url('administrator/jadwal') ?>" class="btn btn-secondary">Kembali</a>
+          <a href="<?= base_url('index.php/administrator/jadwal') ?>" class="btn btn-secondary">Kembali</a>
         </form>
       </div>
     </div>
